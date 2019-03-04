@@ -1,0 +1,108 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    17:34:16 02/12/2019 
+// Design Name: 
+// Module Name:    stopwatch_main 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module stopwatch_main(
+	clk,
+	btns,	//pause
+	btnu,	//reset
+	sw,
+	seg,
+	an
+    );
+	input clk;
+	input [7:0] sw;	//[7:4] 	: NUM
+							//[2] 	: ADJ
+							//[1:0]	: SEL
+							//[3] is unused
+							
+	//pre-debounced buttons
+	input btns;		//center button: PAUSE
+	input btnu;		//right button: RESET
+	
+	output [7:0] seg;	//value that one of the segment digit will show
+	output [3:0] an;	//chooses the segment digit being modified
+	
+	wire btns_deb;	//btns debounced
+	wire btnu_deb;	//btnu debounced
+	
+	//three different clocks
+	wire clk_1hz;	//for counter
+	wire clk_5hz;	//for blinking in ADJ mode
+						//might want to change it into a 2hz
+	wire clk_500hz;//for refreshing display
+	
+	//reg of all four digits, initialized to zeroes
+	reg [3:0] min_tens = 0;
+	reg [3:0] min_ones = 0;
+	reg [3:0] sec_tens = 0;
+	reg [3:0] sec_ones = 0;
+	
+	//states
+	parameter normalRun = 0;	//NORMAL RUN mode
+	parameter pause = 1;			//PAUSED mode
+	parameter adjustment = 2;	//ADJ mode
+	reg [1:0] state = 0;			//reg for state initialize for normalRun
+	
+	always @(posedge clk) begin
+	
+		//switch states
+		case(state)
+			normalRun: begin
+				//if pause button is pressed, swith to paused state
+				if(btns_deb == 1) begin
+					state = pause;
+				end
+				//if adj is on, swith to adjustment state
+				if(sw[2] == 1) begin
+					state = adjustment;
+				end
+			end //end normalRun state
+			pause: begin
+				//if pause button is pressed again, go back to normalRun state
+				if(btns_deb == 1) begin
+					state = normalRun;
+				end
+				//if adj is on, switch to adjustmnet state
+				if(sw[2] == 1) begin
+					state=adjustment;
+				end
+			end //end pause state
+			adjustment: begin
+				//if adj is turned off, go back to normalRun state
+				if(sw[2] == 0) begin
+					state = normalRun;
+				end
+			end //end adjustment state
+		endcase //end switching states
+		
+		
+	end
+	
+	
+	
+	//counter model:
+	//inputs(2): clk, state
+	
+	//outputs(4): min_tens, min_ones, sec_tens, sec_ones
+	clocks ticktock(.clk_i(clk), .clk_m(clk_500hz), .clk_one(clk_1hz), .clk_five(clk_5hz));
+	debouncer debounce_pause (.button_in(btns), .clk_in(clk), .button_out(btns_deb));
+	debouncer debounce_reset (.button_in(btnu), .clk_in(clk), .button_out(btnu_deb));
+
+endmodule
