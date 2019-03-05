@@ -1,0 +1,3 @@
+verilog work "gameStatus.v"
+verilog work "debouncer.v"
+verilog work "gameManager.v"

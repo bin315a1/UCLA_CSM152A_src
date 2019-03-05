@@ -1,0 +1,1070 @@
+Release 14.7 - xst P.20160913 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: gameManager.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "gameManager.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "gameManager"
+Output Format                      : NGC
+Target Device                      : xc6slx45t-3-fgg484
+
+---- Source Options
+Top Module Name                    : gameManager
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameStatus.v" into library work
+Parsing module <gameStatus>.
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/debouncer.v" into library work
+Parsing module <debouncer>.
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" into library work
+Parsing module <gameManager>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <gameManager>.
+
+Elaborating module <debouncer>.
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" Line 40: Assignment to btns_db ignored, since the identifier is never used
+
+Elaborating module <gameStatus>.
+WARNING:Xst:2972 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" line 40. All outputs of instance <d0> of block <debouncer> are unconnected in block <gameManager>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <gameManager>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v".
+WARNING:Xst:647 - Input <rst_gm> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" line 40: Output port <button_out> of the instance <d0> is unconnected or connected to loadless signal.
+    Found 9-bit register for signal <p1Grid_gm>.
+    Found 9-bit register for signal <p2Grid_gm>.
+    Found 1-bit register for signal <cursorPosition_gm_1>.
+    Found 1-bit register for signal <cursorPosition_gm_0>.
+    Found 1-bit register for signal <cursorPosition_gm_3>.
+    Found 1-bit register for signal <cursorPosition_gm_2>.
+    Found 5-bit adder for signal <n0116> created at line 139.
+    Found 2x2-bit multiplier for signal <PWR_1_o_cursorPosition_gm[3]_MuLt_20_OUT> created at line 139.
+    Found 1-bit 9-to-1 multiplexer for signal <n0018> created at line 136.
+    Found 1-bit 9-to-1 multiplexer for signal <n0021> created at line 137.
+    Found 5-bit comparator lessequal for signal <n0026> created at line 139
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  24 Multiplexer(s).
+Unit <gameManager> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/debouncer.v".
+    Found 1-bit register for signal <button_out_reg>.
+    Found 16-bit register for signal <contact_ct>.
+    Found 16-bit adder for signal <contact_ct[15]_GND_2_o_add_2_OUT> created at line 26.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <gameStatus>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameStatus.v".
+        win1 = 9'b111000000
+        win2 = 9'b000111000
+        win3 = 9'b000000111
+        win4 = 9'b100100100
+        win5 = 9'b010010010
+        win6 = 9'b001001001
+        win7 = 9'b100010001
+        win8 = 9'b001010100
+    Found 1-bit register for signal <gameState_gs<2>>.
+    Found 1-bit register for signal <gameState_gs<1>>.
+    Found 1-bit register for signal <gameState_gs<0>>.
+    Found 9-bit adder for signal <p1Grid_gs[0]_p2Grid_gs[0]_add_5_OUT> created at line 59.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <gameStatus> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 2x2-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 6
+ 16-bit adder                                          : 4
+ 5-bit adder                                           : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 17
+ 1-bit register                                        : 11
+ 16-bit register                                       : 4
+ 9-bit register                                        : 2
+# Comparators                                          : 1
+ 5-bit comparator lessequal                            : 1
+# Multiplexers                                         : 27
+ 1-bit 2-to-1 multiplexer                              : 4
+ 1-bit 9-to-1 multiplexer                              : 2
+ 3-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 18
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <contact_ct>: 1 register on signal <contact_ct>.
+Unit <debouncer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <gameManager>.
+	Multiplier <Mmult_PWR_1_o_cursorPosition_gm[3]_MuLt_20_OUT> in block <gameManager> and adder/subtractor <Madd_n0116> in block <gameManager> are combined into a MAC<Maddsub_PWR_1_o_cursorPosition_gm[3]_MuLt_20_OUT>.
+Unit <gameManager> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# MACs                                                 : 1
+ 2x2-to-5-bit MAC                                      : 1
+# Adders/Subtractors                                   : 1
+ 9-bit adder                                           : 1
+# Counters                                             : 4
+ 16-bit up counter                                     : 4
+# Registers                                            : 29
+ Flip-Flops                                            : 29
+# Comparators                                          : 1
+ 5-bit comparator lessequal                            : 1
+# Multiplexers                                         : 27
+ 1-bit 2-to-1 multiplexer                              : 4
+ 1-bit 9-to-1 multiplexer                              : 2
+ 3-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 18
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    cursorPosition_gm_0 in unit <gameManager>
+    cursorPosition_gm_1 in unit <gameManager>
+    cursorPosition_gm_2 in unit <gameManager>
+    cursorPosition_gm_3 in unit <gameManager>
+    gameState_gs_0 in unit <gameStatus>
+    gameState_gs_1 in unit <gameStatus>
+    gameState_gs_2 in unit <gameStatus>
+
+
+Optimizing unit <gameManager> ...
+
+Optimizing unit <gameStatus> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block gameManager, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 100
+ Flip-Flops                                            : 100
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : gameManager.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 335
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 61
+#      LUT2                        : 17
+#      LUT3                        : 14
+#      LUT4                        : 11
+#      LUT5                        : 17
+#      LUT6                        : 63
+#      MUXCY                       : 70
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 75
+# FlipFlops/Latches                : 107
+#      FD                          : 26
+#      FDC                         : 7
+#      FDP                         : 7
+#      FDR                         : 60
+#      LDC                         : 7
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 30
+#      IBUF                        : 5
+#      OBUF                        : 25
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45tfgg484-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             107  out of  54576     0%  
+ Number of Slice LUTs:                  187  out of  27288     0%  
+    Number used as Logic:               187  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    198
+   Number with an unused Flip Flop:      91  out of    198    45%  
+   Number with an unused LUT:            11  out of    198     5%  
+   Number of fully used LUT-FF pairs:    96  out of    198    48%  
+   Number of unique control sets:        27
+
+IO Utilization: 
+ Number of IOs:                          32
+ Number of bonded IOBs:                  31  out of    296    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------------------+---------------------------------+-------+
+Clock Signal                                                                   | Clock buffer(FF name)           | Load  |
+-------------------------------------------------------------------------------+---------------------------------+-------+
+clk_gm                                                                         | BUFGP                           | 74    |
+btns_gm                                                                        | IBUF+BUFG                       | 18    |
+GND_1_o_cursorPosition_gm[3]_AND_74_o(GND_1_o_cursorPosition_gm[3]_AND_74_o1:O)| NONE(*)(cursorPosition_gm_3_LDC)| 1     |
+d3/button_out_reg                                                              | NONE(cursorPosition_gm_3_C_3)   | 4     |
+GND_1_o_cursorPosition_gm[3]_AND_76_o(GND_1_o_cursorPosition_gm[3]_AND_76_o1:O)| NONE(*)(cursorPosition_gm_2_LDC)| 1     |
+GND_1_o_cursorPosition_gm[1]_AND_70_o(GND_1_o_cursorPosition_gm[1]_AND_70_o1:O)| NONE(*)(cursorPosition_gm_1_LDC)| 1     |
+d4/button_out_reg                                                              | NONE(cursorPosition_gm_1_C_1)   | 4     |
+GND_1_o_cursorPosition_gm[1]_AND_72_o(GND_1_o_cursorPosition_gm[1]_AND_72_o1:O)| NONE(*)(cursorPosition_gm_0_LDC)| 1     |
+gs/GND_4_o_gameState_gs[2]_AND_68_o(gs/GND_4_o_gameState_gs[2]_AND_68_o1:O)    | NONE(*)(gs/gameState_gs_0_LDC)  | 1     |
+gs/GND_4_o_gameState_gs[2]_AND_66_o(gs/GND_4_o_gameState_gs[2]_AND_66_o1:O)    | NONE(*)(gs/gameState_gs_1_LDC)  | 1     |
+gs/GND_4_o_gameState_gs[2]_AND_64_o(gs/GND_4_o_gameState_gs[2]_AND_64_o1:O)    | NONE(*)(gs/gameState_gs_2_LDC)  | 1     |
+-------------------------------------------------------------------------------+---------------------------------+-------+
+(*) These 7 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.711ns (Maximum Frequency: 212.262MHz)
+   Minimum input arrival time before clock: 3.840ns
+   Maximum output required time after clock: 5.370ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_gm'
+  Clock period: 3.989ns (frequency: 250.667MHz)
+  Total number of paths / destination ports: 1692 / 140
+-------------------------------------------------------------------------
+Delay:               3.989ns (Levels of Logic = 2)
+  Source:            d4/contact_ct_12 (FF)
+  Destination:       d4/contact_ct_1 (FF)
+  Source Clock:      clk_gm rising
+  Destination Clock: clk_gm rising
+
+  Data Path: d4/contact_ct_12 to d4/contact_ct_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.981  d4/contact_ct_12 (d4/contact_ct_12)
+     LUT6:I0->O            2   0.203   0.721  d4/Mcount_contact_ct_val12 (d4/Mcount_contact_ct_val12)
+     LUT6:I4->O           16   0.203   1.004  d4/Mcount_contact_ct_val2 (d4/Mcount_contact_ct_val)
+     FDR:R                     0.430          d4/contact_ct_9
+    ----------------------------------------
+    Total                      3.989ns (1.283ns logic, 2.706ns route)
+                                       (32.2% logic, 67.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'btns_gm'
+  Clock period: 4.711ns (frequency: 212.262MHz)
+  Total number of paths / destination ports: 346 / 18
+-------------------------------------------------------------------------
+Delay:               4.711ns (Levels of Logic = 4)
+  Source:            p1Grid_gm_0 (FF)
+  Destination:       p1Grid_gm_0 (FF)
+  Source Clock:      btns_gm rising
+  Destination Clock: btns_gm rising
+
+  Data Path: p1Grid_gm_0 to p1Grid_gm_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               8   0.447   0.907  p1Grid_gm_0 (p1Grid_gm_0)
+     LUT3:I1->O            1   0.203   0.808  _n0154_inv17 (_n0154_inv17)
+     LUT6:I3->O            1   0.205   0.580  _n0154_inv19 (_n0154_inv19)
+     LUT5:I4->O           18   0.205   1.050  _n0154_inv110 (_n0154_inv1)
+     LUT6:I5->O            1   0.205   0.000  p2Grid_gm_0_rstpot (p2Grid_gm_0_rstpot)
+     FD:D                      0.102          p2Grid_gm_0
+    ----------------------------------------
+    Total                      4.711ns (1.367ns logic, 3.344ns route)
+                                       (29.0% logic, 71.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'GND_1_o_cursorPosition_gm[3]_AND_74_o'
+  Clock period: 2.797ns (frequency: 357.551MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.797ns (Levels of Logic = 1)
+  Source:            cursorPosition_gm_3_LDC (LATCH)
+  Destination:       cursorPosition_gm_3_LDC (LATCH)
+  Source Clock:      GND_1_o_cursorPosition_gm[3]_AND_74_o falling
+  Destination Clock: GND_1_o_cursorPosition_gm[3]_AND_74_o falling
+
+  Data Path: cursorPosition_gm_3_LDC to cursorPosition_gm_3_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              8   0.498   1.050  cursorPosition_gm_3_LDC (cursorPosition_gm_3_LDC)
+     LUT5:I1->O            2   0.203   0.616  GND_1_o_cursorPosition_gm[3]_AND_75_o1 (GND_1_o_cursorPosition_gm[3]_AND_75_o)
+     LDC:CLR                   0.430          cursorPosition_gm_3_LDC
+    ----------------------------------------
+    Total                      2.797ns (1.131ns logic, 1.666ns route)
+                                       (40.4% logic, 59.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'd3/button_out_reg'
+  Clock period: 3.854ns (frequency: 259.450MHz)
+  Total number of paths / destination ports: 28 / 8
+-------------------------------------------------------------------------
+Delay:               3.854ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_2_P_2 (FF)
+  Destination:       cursorPosition_gm_3_C_3 (FF)
+  Source Clock:      d3/button_out_reg rising
+  Destination Clock: d3/button_out_reg rising
+
+  Data Path: cursorPosition_gm_2_P_2 to cursorPosition_gm_3_C_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              5   0.447   0.819  cursorPosition_gm_2_P_2 (cursorPosition_gm_2_P_2)
+     LUT3:I1->O           22   0.203   1.134  cursorPosition_gm_21 (cursorPosition_gm_2)
+     LUT5:I4->O            2   0.205   0.616  GND_1_o_cursorPosition_gm[3]_AND_75_o1 (GND_1_o_cursorPosition_gm[3]_AND_75_o)
+     FDC:CLR                   0.430          cursorPosition_gm_3_C_3
+    ----------------------------------------
+    Total                      3.854ns (1.285ns logic, 2.569ns route)
+                                       (33.3% logic, 66.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'GND_1_o_cursorPosition_gm[1]_AND_70_o'
+  Clock period: 2.928ns (frequency: 341.565MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.928ns (Levels of Logic = 1)
+  Source:            cursorPosition_gm_1_LDC (LATCH)
+  Destination:       cursorPosition_gm_1_LDC (LATCH)
+  Source Clock:      GND_1_o_cursorPosition_gm[1]_AND_70_o falling
+  Destination Clock: GND_1_o_cursorPosition_gm[1]_AND_70_o falling
+
+  Data Path: cursorPosition_gm_1_LDC to cursorPosition_gm_1_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q             13   0.498   1.180  cursorPosition_gm_1_LDC (cursorPosition_gm_1_LDC)
+     LUT5:I1->O            2   0.203   0.616  GND_1_o_cursorPosition_gm[1]_AND_71_o1 (GND_1_o_cursorPosition_gm[1]_AND_71_o)
+     LDC:CLR                   0.430          cursorPosition_gm_1_LDC
+    ----------------------------------------
+    Total                      2.928ns (1.131ns logic, 1.797ns route)
+                                       (38.6% logic, 61.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'd4/button_out_reg'
+  Clock period: 3.875ns (frequency: 258.084MHz)
+  Total number of paths / destination ports: 28 / 8
+-------------------------------------------------------------------------
+Delay:               3.875ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_0_P_0 (FF)
+  Destination:       cursorPosition_gm_1_C_1 (FF)
+  Source Clock:      d4/button_out_reg rising
+  Destination Clock: d4/button_out_reg rising
+
+  Data Path: cursorPosition_gm_0_P_0 to cursorPosition_gm_1_C_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              5   0.447   0.819  cursorPosition_gm_0_P_0 (cursorPosition_gm_0_P_0)
+     LUT3:I1->O           23   0.203   1.154  cursorPosition_gm_01 (cursorPosition_gm_0)
+     LUT5:I4->O            2   0.205   0.616  GND_1_o_cursorPosition_gm[1]_AND_71_o1 (GND_1_o_cursorPosition_gm[1]_AND_71_o)
+     FDC:CLR                   0.430          cursorPosition_gm_1_C_1
+    ----------------------------------------
+    Total                      3.875ns (1.285ns logic, 2.590ns route)
+                                       (33.2% logic, 66.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gs/GND_4_o_gameState_gs[2]_AND_68_o'
+  Clock period: 2.921ns (frequency: 342.348MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.921ns (Levels of Logic = 1)
+  Source:            gs/gameState_gs_0_LDC (LATCH)
+  Destination:       gs/gameState_gs_0_LDC (LATCH)
+  Source Clock:      gs/GND_4_o_gameState_gs[2]_AND_68_o falling
+  Destination Clock: gs/GND_4_o_gameState_gs[2]_AND_68_o falling
+
+  Data Path: gs/gameState_gs_0_LDC to gs/gameState_gs_0_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              9   0.498   1.174  gs/gameState_gs_0_LDC (gs/gameState_gs_0_LDC)
+     LUT6:I1->O            2   0.203   0.616  gs/GND_4_o_gameState_gs[2]_AND_69_o1 (gs/GND_4_o_gameState_gs[2]_AND_69_o)
+     LDC:CLR                   0.430          gs/gameState_gs_0_LDC
+    ----------------------------------------
+    Total                      2.921ns (1.131ns logic, 1.790ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gs/GND_4_o_gameState_gs[2]_AND_66_o'
+  Clock period: 2.629ns (frequency: 380.445MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.629ns (Levels of Logic = 1)
+  Source:            gs/gameState_gs_1_LDC (LATCH)
+  Destination:       gs/gameState_gs_1_LDC (LATCH)
+  Source Clock:      gs/GND_4_o_gameState_gs[2]_AND_66_o falling
+  Destination Clock: gs/GND_4_o_gameState_gs[2]_AND_66_o falling
+
+  Data Path: gs/gameState_gs_1_LDC to gs/gameState_gs_1_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              3   0.498   0.879  gs/gameState_gs_1_LDC (gs/gameState_gs_1_LDC)
+     LUT4:I1->O            2   0.205   0.616  gs/GND_4_o_gameState_gs[2]_AND_67_o1 (gs/GND_4_o_gameState_gs[2]_AND_67_o)
+     LDC:CLR                   0.430          gs/gameState_gs_1_LDC
+    ----------------------------------------
+    Total                      2.629ns (1.133ns logic, 1.496ns route)
+                                       (43.1% logic, 56.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gs/GND_4_o_gameState_gs[2]_AND_64_o'
+  Clock period: 2.629ns (frequency: 380.445MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.629ns (Levels of Logic = 1)
+  Source:            gs/gameState_gs_2_LDC (LATCH)
+  Destination:       gs/gameState_gs_2_LDC (LATCH)
+  Source Clock:      gs/GND_4_o_gameState_gs[2]_AND_64_o falling
+  Destination Clock: gs/GND_4_o_gameState_gs[2]_AND_64_o falling
+
+  Data Path: gs/gameState_gs_2_LDC to gs/gameState_gs_2_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              3   0.498   0.879  gs/gameState_gs_2_LDC (gs/gameState_gs_2_LDC)
+     LUT4:I1->O            2   0.205   0.616  gs/GND_4_o_gameState_gs[2]_AND_65_o1 (gs/GND_4_o_gameState_gs[2]_AND_65_o)
+     LDC:CLR                   0.430          gs/gameState_gs_2_LDC
+    ----------------------------------------
+    Total                      2.629ns (1.133ns logic, 1.496ns route)
+                                       (43.1% logic, 56.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_gm'
+  Total number of paths / destination ports: 74 / 74
+-------------------------------------------------------------------------
+Offset:              3.840ns (Levels of Logic = 2)
+  Source:            btnr_gm (PAD)
+  Destination:       d4/contact_ct_1 (FF)
+  Destination Clock: clk_gm rising
+
+  Data Path: btnr_gm to d4/contact_ct_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.222   0.981  btnr_gm_IBUF (btnr_gm_IBUF)
+     LUT6:I0->O           16   0.203   1.004  d4/Mcount_contact_ct_val2 (d4/Mcount_contact_ct_val)
+     FDR:R                     0.430          d4/contact_ct_9
+    ----------------------------------------
+    Total                      3.840ns (1.855ns logic, 1.985ns route)
+                                       (48.3% logic, 51.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gs/GND_4_o_gameState_gs[2]_AND_68_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.580ns (Levels of Logic = 2)
+  Source:            btns_gm (PAD)
+  Destination:       gs/gameState_gs_0_LDC (LATCH)
+  Destination Clock: gs/GND_4_o_gameState_gs[2]_AND_68_o falling
+
+  Data Path: btns_gm to gs/gameState_gs_0_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   1.109  btns_gm_IBUF (btns_gm_IBUF)
+     LUT6:I0->O            2   0.203   0.616  gs/GND_4_o_gameState_gs[2]_AND_69_o1 (gs/GND_4_o_gameState_gs[2]_AND_69_o)
+     LDC:CLR                   0.430          gs/gameState_gs_0_LDC
+    ----------------------------------------
+    Total                      3.580ns (1.855ns logic, 1.725ns route)
+                                       (51.8% logic, 48.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gs/GND_4_o_gameState_gs[2]_AND_66_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.463ns (Levels of Logic = 2)
+  Source:            btns_gm (PAD)
+  Destination:       gs/gameState_gs_1_LDC (LATCH)
+  Destination Clock: gs/GND_4_o_gameState_gs[2]_AND_66_o falling
+
+  Data Path: btns_gm to gs/gameState_gs_1_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   0.992  btns_gm_IBUF (btns_gm_IBUF)
+     LUT4:I0->O            2   0.203   0.616  gs/GND_4_o_gameState_gs[2]_AND_67_o1 (gs/GND_4_o_gameState_gs[2]_AND_67_o)
+     LDC:CLR                   0.430          gs/gameState_gs_1_LDC
+    ----------------------------------------
+    Total                      3.463ns (1.855ns logic, 1.608ns route)
+                                       (53.6% logic, 46.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gs/GND_4_o_gameState_gs[2]_AND_64_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.463ns (Levels of Logic = 2)
+  Source:            btns_gm (PAD)
+  Destination:       gs/gameState_gs_2_LDC (LATCH)
+  Destination Clock: gs/GND_4_o_gameState_gs[2]_AND_64_o falling
+
+  Data Path: btns_gm to gs/gameState_gs_2_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   0.992  btns_gm_IBUF (btns_gm_IBUF)
+     LUT4:I0->O            2   0.203   0.616  gs/GND_4_o_gameState_gs[2]_AND_65_o1 (gs/GND_4_o_gameState_gs[2]_AND_65_o)
+     LDC:CLR                   0.430          gs/gameState_gs_2_LDC
+    ----------------------------------------
+    Total                      3.463ns (1.855ns logic, 1.608ns route)
+                                       (53.6% logic, 46.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'GND_1_o_cursorPosition_gm[3]_AND_74_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.921ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_3_LDC (LATCH)
+  Destination:       cursorPosition_gm<3> (PAD)
+  Source Clock:      GND_1_o_cursorPosition_gm[3]_AND_74_o falling
+
+  Data Path: cursorPosition_gm_3_LDC to cursorPosition_gm<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              8   0.498   1.031  cursorPosition_gm_3_LDC (cursorPosition_gm_3_LDC)
+     LUT3:I0->O            2   0.205   0.616  cursorPosition_gm_31 (cursorPosition_gm_3)
+     OBUF:I->O                 2.571          cursorPosition_gm_3_OBUF (cursorPosition_gm<3>)
+    ----------------------------------------
+    Total                      4.921ns (3.274ns logic, 1.647ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'd3/button_out_reg'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              5.173ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_2_P_2 (FF)
+  Destination:       cursorPosition_gm<2> (PAD)
+  Source Clock:      d3/button_out_reg rising
+
+  Data Path: cursorPosition_gm_2_P_2 to cursorPosition_gm<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              5   0.447   0.819  cursorPosition_gm_2_P_2 (cursorPosition_gm_2_P_2)
+     LUT3:I1->O           22   0.203   1.133  cursorPosition_gm_21 (cursorPosition_gm_2)
+     OBUF:I->O                 2.571          cursorPosition_gm_2_OBUF (cursorPosition_gm<2>)
+    ----------------------------------------
+    Total                      5.173ns (3.221ns logic, 1.952ns route)
+                                       (62.3% logic, 37.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'GND_1_o_cursorPosition_gm[3]_AND_76_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.350ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_2_LDC (LATCH)
+  Destination:       cursorPosition_gm<2> (PAD)
+  Source Clock:      GND_1_o_cursorPosition_gm[3]_AND_76_o falling
+
+  Data Path: cursorPosition_gm_2_LDC to cursorPosition_gm<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              5   0.498   0.943  cursorPosition_gm_2_LDC (cursorPosition_gm_2_LDC)
+     LUT3:I0->O           22   0.205   1.133  cursorPosition_gm_21 (cursorPosition_gm_2)
+     OBUF:I->O                 2.571          cursorPosition_gm_2_OBUF (cursorPosition_gm<2>)
+    ----------------------------------------
+    Total                      5.350ns (3.274ns logic, 2.076ns route)
+                                       (61.2% logic, 38.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'GND_1_o_cursorPosition_gm[1]_AND_70_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.179ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_1_LDC (LATCH)
+  Destination:       cursorPosition_gm<1> (PAD)
+  Source Clock:      GND_1_o_cursorPosition_gm[1]_AND_70_o falling
+
+  Data Path: cursorPosition_gm_1_LDC to cursorPosition_gm<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q             13   0.498   1.161  cursorPosition_gm_1_LDC (cursorPosition_gm_1_LDC)
+     LUT3:I0->O            6   0.205   0.744  cursorPosition_gm_11 (cursorPosition_gm_1)
+     OBUF:I->O                 2.571          cursorPosition_gm_1_OBUF (cursorPosition_gm<1>)
+    ----------------------------------------
+    Total                      5.179ns (3.274ns logic, 1.905ns route)
+                                       (63.2% logic, 36.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'd4/button_out_reg'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              5.193ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_0_P_0 (FF)
+  Destination:       cursorPosition_gm<0> (PAD)
+  Source Clock:      d4/button_out_reg rising
+
+  Data Path: cursorPosition_gm_0_P_0 to cursorPosition_gm<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              5   0.447   0.819  cursorPosition_gm_0_P_0 (cursorPosition_gm_0_P_0)
+     LUT3:I1->O           23   0.203   1.153  cursorPosition_gm_01 (cursorPosition_gm_0)
+     OBUF:I->O                 2.571          cursorPosition_gm_0_OBUF (cursorPosition_gm<0>)
+    ----------------------------------------
+    Total                      5.193ns (3.221ns logic, 1.972ns route)
+                                       (62.0% logic, 38.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'GND_1_o_cursorPosition_gm[1]_AND_72_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.370ns (Levels of Logic = 2)
+  Source:            cursorPosition_gm_0_LDC (LATCH)
+  Destination:       cursorPosition_gm<0> (PAD)
+  Source Clock:      GND_1_o_cursorPosition_gm[1]_AND_72_o falling
+
+  Data Path: cursorPosition_gm_0_LDC to cursorPosition_gm<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              5   0.498   0.943  cursorPosition_gm_0_LDC (cursorPosition_gm_0_LDC)
+     LUT3:I0->O           23   0.205   1.153  cursorPosition_gm_01 (cursorPosition_gm_0)
+     OBUF:I->O                 2.571          cursorPosition_gm_0_OBUF (cursorPosition_gm<0>)
+    ----------------------------------------
+    Total                      5.370ns (3.274ns logic, 2.096ns route)
+                                       (61.0% logic, 39.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gs/GND_4_o_gameState_gs[2]_AND_64_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.926ns (Levels of Logic = 2)
+  Source:            gs/gameState_gs_2_LDC (LATCH)
+  Destination:       gameState_gm<2> (PAD)
+  Source Clock:      gs/GND_4_o_gameState_gs[2]_AND_64_o falling
+
+  Data Path: gs/gameState_gs_2_LDC to gameState_gm<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              3   0.498   0.879  gs/gameState_gs_2_LDC (gs/gameState_gs_2_LDC)
+     LUT3:I0->O            7   0.205   0.773  gs/gameState_gs_21 (gs/gameState_gs_2)
+     OBUF:I->O                 2.571          gameState_gm_2_OBUF (gameState_gm<2>)
+    ----------------------------------------
+    Total                      4.926ns (3.274ns logic, 1.652ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_gm'
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Offset:              5.159ns (Levels of Logic = 2)
+  Source:            gs/gameState_gs_0_P_0 (FF)
+  Destination:       gameState_gm<0> (PAD)
+  Source Clock:      clk_gm rising
+
+  Data Path: gs/gameState_gs_0_P_0 to gameState_gm<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              9   0.447   0.934  gs/gameState_gs_0_P_0 (gs/gameState_gs_0_P_0)
+     LUT3:I1->O           16   0.203   1.004  gs/gameState_gs_01 (gs/gameState_gs_0)
+     OBUF:I->O                 2.571          gameState_gm_0_OBUF (gameState_gm<0>)
+    ----------------------------------------
+    Total                      5.159ns (3.221ns logic, 1.938ns route)
+                                       (62.4% logic, 37.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gs/GND_4_o_gameState_gs[2]_AND_66_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.926ns (Levels of Logic = 2)
+  Source:            gs/gameState_gs_1_LDC (LATCH)
+  Destination:       gameState_gm<1> (PAD)
+  Source Clock:      gs/GND_4_o_gameState_gs[2]_AND_66_o falling
+
+  Data Path: gs/gameState_gs_1_LDC to gameState_gm<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              3   0.498   0.879  gs/gameState_gs_1_LDC (gs/gameState_gs_1_LDC)
+     LUT3:I0->O            7   0.205   0.773  gs/gameState_gs_11 (gs/gameState_gs_1)
+     OBUF:I->O                 2.571          gameState_gm_1_OBUF (gameState_gm<1>)
+    ----------------------------------------
+    Total                      4.926ns (3.274ns logic, 1.652ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gs/GND_4_o_gameState_gs[2]_AND_68_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.336ns (Levels of Logic = 2)
+  Source:            gs/gameState_gs_0_LDC (LATCH)
+  Destination:       gameState_gm<0> (PAD)
+  Source Clock:      gs/GND_4_o_gameState_gs[2]_AND_68_o falling
+
+  Data Path: gs/gameState_gs_0_LDC to gameState_gm<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              9   0.498   1.058  gs/gameState_gs_0_LDC (gs/gameState_gs_0_LDC)
+     LUT3:I0->O           16   0.205   1.004  gs/gameState_gs_01 (gs/gameState_gs_0)
+     OBUF:I->O                 2.571          gameState_gm_0_OBUF (gameState_gm<0>)
+    ----------------------------------------
+    Total                      5.336ns (3.274ns logic, 2.062ns route)
+                                       (61.4% logic, 38.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'btns_gm'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              3.847ns (Levels of Logic = 1)
+  Source:            p1Grid_gm_6 (FF)
+  Destination:       p1Grid_gm<6> (PAD)
+  Source Clock:      btns_gm rising
+
+  Data Path: p1Grid_gm_6 to p1Grid_gm<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               9   0.447   0.829  p1Grid_gm_6 (p1Grid_gm_6)
+     OBUF:I->O                 2.571          p1Grid_gm_6_OBUF (p1Grid_gm<6>)
+    ----------------------------------------
+    Total                      3.847ns (3.018ns logic, 0.829ns route)
+                                       (78.5% logic, 21.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock GND_1_o_cursorPosition_gm[1]_AND_70_o
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[1]_AND_70_o|         |         |    2.928|         |
+GND_1_o_cursorPosition_gm[1]_AND_72_o|         |         |    4.052|         |
+clk_gm                               |         |         |    2.755|         |
+d4/button_out_reg                    |         |         |    3.875|         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock GND_1_o_cursorPosition_gm[1]_AND_72_o
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[1]_AND_70_o|         |         |    2.911|         |
+clk_gm                               |         |         |    2.658|         |
+d4/button_out_reg                    |         |         |    2.734|         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock GND_1_o_cursorPosition_gm[3]_AND_74_o
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[3]_AND_74_o|         |         |    2.797|         |
+GND_1_o_cursorPosition_gm[3]_AND_76_o|         |         |    4.031|         |
+clk_gm                               |         |         |    2.755|         |
+d3/button_out_reg                    |         |         |    3.854|         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock GND_1_o_cursorPosition_gm[3]_AND_76_o
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[3]_AND_74_o|         |         |    2.780|         |
+clk_gm                               |         |         |    2.658|         |
+d3/button_out_reg                    |         |         |    2.603|         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock btns_gm
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[1]_AND_70_o|         |    7.155|         |         |
+GND_1_o_cursorPosition_gm[1]_AND_72_o|         |    7.472|         |         |
+GND_1_o_cursorPosition_gm[3]_AND_74_o|         |    8.335|         |         |
+GND_1_o_cursorPosition_gm[3]_AND_76_o|         |    7.641|         |         |
+btns_gm                              |    4.711|         |         |         |
+clk_gm                               |    4.083|         |         |         |
+d3/button_out_reg                    |    8.158|         |         |         |
+d4/button_out_reg                    |    7.295|         |         |         |
+gs/GND_4_o_gameState_gs[2]_AND_64_o  |         |    4.163|         |         |
+gs/GND_4_o_gameState_gs[2]_AND_66_o  |         |    4.260|         |         |
+gs/GND_4_o_gameState_gs[2]_AND_68_o  |         |    3.415|         |         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_gm
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+btns_gm                            |    5.082|         |         |         |
+clk_gm                             |    3.989|         |         |         |
+gs/GND_4_o_gameState_gs[2]_AND_64_o|         |    3.607|         |         |
+gs/GND_4_o_gameState_gs[2]_AND_66_o|         |    3.709|         |         |
+gs/GND_4_o_gameState_gs[2]_AND_68_o|         |    3.415|         |         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock d3/button_out_reg
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[3]_AND_74_o|         |    2.894|         |         |
+GND_1_o_cursorPosition_gm[3]_AND_76_o|         |    4.031|         |         |
+clk_gm                               |    2.755|         |         |         |
+d3/button_out_reg                    |    3.854|         |         |         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock d4/button_out_reg
+-------------------------------------+---------+---------+---------+---------+
+                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------+---------+---------+---------+---------+
+GND_1_o_cursorPosition_gm[1]_AND_70_o|         |    3.025|         |         |
+GND_1_o_cursorPosition_gm[1]_AND_72_o|         |    4.052|         |         |
+clk_gm                               |    2.755|         |         |         |
+d4/button_out_reg                    |    3.875|         |         |         |
+-------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gs/GND_4_o_gameState_gs[2]_AND_64_o
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+clk_gm                             |         |         |    2.452|         |
+gs/GND_4_o_gameState_gs[2]_AND_64_o|         |         |    2.629|         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gs/GND_4_o_gameState_gs[2]_AND_66_o
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+clk_gm                             |         |         |    2.452|         |
+gs/GND_4_o_gameState_gs[2]_AND_66_o|         |         |    2.629|         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gs/GND_4_o_gameState_gs[2]_AND_68_o
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+clk_gm                             |         |         |    3.532|         |
+gs/GND_4_o_gameState_gs[2]_AND_64_o|         |         |    3.607|         |
+gs/GND_4_o_gameState_gs[2]_AND_66_o|         |         |    3.709|         |
+gs/GND_4_o_gameState_gs[2]_AND_68_o|         |         |    2.921|         |
+-----------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 13.06 secs
+ 
+--> 
+
+
+Total memory usage is 385704 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+
