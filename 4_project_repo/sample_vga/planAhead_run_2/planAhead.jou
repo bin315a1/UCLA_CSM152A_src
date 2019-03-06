@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.6 (64-bit)
+# Build 269223 by xbuild on Wed Jun  5 11:14:03 MDT 2013
+# Start of session at: Tue Mar 05 12:47:33 2019
+# Process ID: 1184
+# Log file: C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_vga/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_vga/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_vga/pa.fromNetlist.tcl

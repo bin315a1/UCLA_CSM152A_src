@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module ticTacToe_main(
 	//inputs: clock, 5 buttons, reset switch
-	input clk,
+	input clk,	//main 100mhz clock
 	input btns,
 	input btnu,
 	input btnl,
@@ -38,8 +38,12 @@ module ticTacToe_main(
 	output test_p1;
 	output test_p2;
     );
+	 //clocks
+	 wire clk_25Mhz, clk_500hz;
+	 clockDivider cd(.clk_cd(clk), .clk_25Mhz_cd(clk_25Mhz), .clk_500hz_cd(clk_500hz));
 	 
-	 
+	 //gameplay
+	 gameManager gm()
 	 //player1 and player2 grid
 	 wire [0:8] p1Grid;
 	 wire [0:8] p2Grid;
@@ -50,9 +54,10 @@ module ticTacToe_main(
 	 //current cursor
 	 wire [3:0] cursorPosition;
 	 // [3:2] : x coordinate, [1:0] : y coordinate
-	 //	  X:00 01 02
-	 //Y:	00  x  x  x
-	 //	01  x  x  x
+	 //			X
+	 // 		00 01 02
+	 //	00  x  x  x
+	 //Y	01  x  x  x
 	 //	02  x  x  x
 	 
 	 //state of game
@@ -66,6 +71,6 @@ module ticTacToe_main(
 	 //enable display
 	 wire en_display;
 	 
-
-
+	
+	
 endmodule

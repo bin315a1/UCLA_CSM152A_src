@@ -34,7 +34,6 @@ module gameManager(
     );
 	 
 	 wire btns_db, btnu_db, btnl_db, btnd_db, btnr_db;
-	 reg playerTurn;	//0 for p1, 1 for p2
 	 
 	//debouncers here
 	debouncer d0(.clk_in(clk_gm), .button_in(btns_gm), .button_out(btns_db));
@@ -125,7 +124,7 @@ module gameManager(
 	end
 	
 	/////////////////////////////////////////////////////////////////////////
-	/////////////Game Play
+	/////////////Game Play; placing your subject
 	/////////////////////////////////////////////////////////////////////////
 	
 	always@(posedge btns_gm)begin

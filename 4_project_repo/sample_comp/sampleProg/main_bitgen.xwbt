@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\main.ncd
+OUTFILE=C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\main.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg
+LICENSE=ISE
+USER_INFO=203015155_203016297_210565169_465

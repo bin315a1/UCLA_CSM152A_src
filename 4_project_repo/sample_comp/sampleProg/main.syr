@@ -1,0 +1,806 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\shift_divider.v" into library work
+Parsing module <shift_divider>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\lut.v" into library work
+Parsing module <lut>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\go_decode.v" into library work
+Parsing module <go_decode>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" into library work
+Parsing module <vga_color_sel>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\pulser.v" into library work
+Parsing module <pulser>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\go_encode.v" into library work
+Parsing module <go_encode>.
+WARNING:HDLCompiler:248 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\go_encode.v" Line 31: Block identifier is required on this block
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\debouncer.v" into library work
+Parsing module <debouncer>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\counter.v" into library work
+Parsing module <counter>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga.v" into library work
+Parsing module <vga>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\reg_array.v" into library work
+Parsing module <reg_array>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\btn_flsm.v" into library work
+Parsing module <btn_flsm>.
+Analyzing Verilog file "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\main.v" into library work
+Parsing module <main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <main>.
+
+Elaborating module <btn_flsm>.
+
+Elaborating module <debouncer>.
+
+Elaborating module <pulser>.
+
+Elaborating module <reg_array>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\reg_array.v" Line 49: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\reg_array.v" Line 50: Result of 32-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <go_encode>.
+
+Elaborating module <vga>.
+
+Elaborating module <counter(N=2,M=3)>.
+WARNING:HDLCompiler:1127 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga.v" Line 25: Assignment to CC ignored, since the identifier is never used
+
+Elaborating module <counter(N=10,M=799)>.
+
+Elaborating module <counter(N=10,M=524)>.
+
+Elaborating module <counter(N=6,M=50)>.
+
+Elaborating module <vga_color_sel>.
+
+Elaborating module <go_decode>.
+
+Elaborating module <lut(AW=16,DW=12,F="sprites.hex")>.
+Reading initialization file \"sprites.hex\".
+
+Elaborating module <shift_divider(DW=4)>.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" Line 48: Size mismatch in connection of port <I>. Formal port size is 16-bit while actual signal size is 10-bit.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" Line 50: Size mismatch in connection of port <Q>. Formal port size is 16-bit while actual signal size is 2-bit.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" Line 51: Size mismatch in connection of port <R>. Formal port size is 16-bit while actual signal size is 10-bit.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" Line 58: Size mismatch in connection of port <I>. Formal port size is 16-bit while actual signal size is 10-bit.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" Line 60: Size mismatch in connection of port <Q>. Formal port size is 16-bit while actual signal size is 2-bit.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v" Line 61: Size mismatch in connection of port <R>. Formal port size is 16-bit while actual signal size is 10-bit.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <main>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\main.v".
+    Summary:
+	no macro.
+Unit <main> synthesized.
+
+Synthesizing Unit <btn_flsm>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\btn_flsm.v".
+WARNING:Xst:647 - Input <gameover<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit register for signal <wd>.
+    Found 1-bit register for signal <addr<0>>.
+    Found 1-bit register for signal <addr<3>>.
+    Found 1-bit register for signal <addr<2>>.
+    Found 1-bit register for signal <addr<1>>.
+    Found 2-bit subtractor for signal <addr[1]_GND_2_o_sub_8_OUT> created at line 53.
+    Found 2-bit subtractor for signal <addr[3]_GND_2_o_sub_17_OUT> created at line 64.
+    Found 2-bit adder for signal <addr[1]_GND_2_o_add_3_OUT> created at line 51.
+    Found 2-bit adder for signal <addr[3]_GND_2_o_add_12_OUT> created at line 62.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <btn_flsm> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\debouncer.v".
+        N = 16'b1111111111111111
+    Found 2-bit register for signal <ps>.
+    Found 16-bit register for signal <C>.
+    Found finite state machine <FSM_0> for signal <ps>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <C[15]_GND_3_o_add_3_OUT> created at line 31.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <pulser>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\pulser.v".
+        PE = 1
+    Found 2-bit register for signal <ps>.
+    Found finite state machine <FSM_1> for signal <ps>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <pulser> synthesized.
+
+Synthesizing Unit <reg_array>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\reg_array.v".
+    Found 32-bit register for signal <memO>.
+    Found 32-bit register for signal <mem>.
+    Found 32-bit shifter logical left for signal <GND_6_o_waddr[3]_shift_left_3_OUT> created at line 35
+    Found 32-bit shifter logical left for signal <GND_6_o_waddr[3]_shift_left_6_OUT> created at line 35
+    Found 32-bit shifter logical right for signal <n0019> created at line 49
+    Found 32-bit shifter logical right for signal <n0020> created at line 50
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   4 Combinational logic shifter(s).
+Unit <reg_array> synthesized.
+
+Synthesizing Unit <go_encode>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\go_encode.v".
+WARNING:Xst:647 - Input <mem<7:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <mem<15:14>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <mem<31:22>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <go_encode> synthesized.
+
+Synthesizing Unit <vga>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga.v".
+INFO:Xst:3210 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga.v" line 25: Output port <C> of the instance <cc> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga.v" line 29: Output port <T> of the instance <fc> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <HS>.
+    Found 1-bit register for signal <VS>.
+    Found 12-bit register for signal <vgaRGB>.
+    Found 10-bit comparator lessequal for signal <n0003> created at line 53
+    Found 10-bit comparator lessequal for signal <n0005> created at line 54
+    Summary:
+	inferred  14 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <vga> synthesized.
+
+Synthesizing Unit <counter_1>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\counter.v".
+        N = 2
+        M = 3
+    Found 2-bit register for signal <C>.
+    Found 2-bit adder for signal <C[1]_GND_9_o_add_3_OUT> created at line 18.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter_1> synthesized.
+
+Synthesizing Unit <counter_2>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\counter.v".
+        N = 10
+        M = 799
+    Found 10-bit register for signal <C>.
+    Found 10-bit adder for signal <C[9]_GND_10_o_add_3_OUT> created at line 18.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter_2> synthesized.
+
+Synthesizing Unit <counter_3>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\counter.v".
+        N = 10
+        M = 524
+    Found 10-bit register for signal <C>.
+    Found 10-bit adder for signal <C[9]_GND_11_o_add_3_OUT> created at line 18.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter_3> synthesized.
+
+Synthesizing Unit <counter_4>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\counter.v".
+        N = 6
+        M = 50
+    Found 6-bit register for signal <C>.
+    Found 6-bit adder for signal <C[5]_GND_12_o_add_3_OUT> created at line 18.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter_4> synthesized.
+
+Synthesizing Unit <vga_color_sel>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\vga_color_sel.v".
+        LEdge = 10'b0010010000
+        REdge = 10'b1100010000
+        UEdge = 10'b0000100011
+        DEdge = 10'b1000000011
+        ImgSize = 10'b0010000000
+        HMin = 10'b0100001111
+        HMax = 32'b00000000000000000000001010001110
+        VMin = 10'b0001010010
+        VMax = 32'b00000000000000000000000111010001
+    Found 10-bit subtractor for signal <VC[9]_GND_13_o_sub_22_OUT> created at line 48.
+    Found 10-bit subtractor for signal <HC[9]_GND_13_o_sub_23_OUT> created at line 58.
+    Found 10-bit comparator greater for signal <GND_13_o_HC[9]_LessThan_1_o> created at line 27
+    Found 10-bit comparator lessequal for signal <n0001> created at line 27
+    Found 10-bit comparator greater for signal <GND_13_o_VC[9]_LessThan_3_o> created at line 27
+    Found 10-bit comparator lessequal for signal <n0006> created at line 27
+    Found 10-bit comparator lessequal for signal <n0009> created at line 28
+    Found 10-bit comparator lessequal for signal <n0011> created at line 28
+    Found 10-bit comparator lessequal for signal <n0014> created at line 28
+    Found 10-bit comparator lessequal for signal <n0017> created at line 28
+    Found 4-bit comparator equal for signal <uaddr[3]_saddr[3]_equal_13_o> created at line 30
+    Found 6-bit comparator greater for signal <FC[5]_GND_13_o_LessThan_14_o> created at line 30
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <vga_color_sel> synthesized.
+
+Synthesizing Unit <go_decode>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\go_decode.v".
+WARNING:Xst:647 - Input <gameover<8:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 12-bit 13-to-1 multiplexer for signal <addr[3]_GND_14_o_wide_mux_9_OUT> created at line 12.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <go_decode> synthesized.
+
+Synthesizing Unit <lut>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\lut.v".
+        AW = 16
+        DW = 12
+        F = "sprites.hex"
+WARNING:Xst:2999 - Signal 'mem', unconnected in block 'lut', is tied to its initial value.
+    Found 65536x12-bit single-port Read Only RAM <Mram_mem> for signal <mem>.
+    Found 12-bit register for signal <D>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  12 D-type flip-flop(s).
+Unit <lut> synthesized.
+
+Synthesizing Unit <shift_divider>.
+    Related source file is "C:\Users\152\Desktop\lab6_group11\UCLA_CSM152A_src\4_project_repo\sample_comp\sampleProg\shift_divider.v".
+        DW = 4
+    Found 16-bit shifter logical right for signal <Q> created at line 8
+    Found 16-bit shifter logical left for signal <PWR_16_o_S[3]_shift_left_1_OUT> created at line 13
+    Summary:
+	inferred   2 Combinational logic shifter(s).
+Unit <shift_divider> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 65536x12-bit single-port Read Only RAM                : 1
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 2
+ 10-bit subtractor                                     : 2
+ 16-bit adder                                          : 5
+ 2-bit adder                                           : 3
+ 2-bit subtractor                                      : 2
+ 6-bit adder                                           : 1
+# Registers                                            : 20
+ 1-bit register                                        : 6
+ 10-bit register                                       : 2
+ 12-bit register                                       : 2
+ 16-bit register                                       : 5
+ 2-bit register                                        : 2
+ 32-bit register                                       : 2
+ 6-bit register                                        : 1
+# Comparators                                          : 12
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 8
+ 4-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 26
+ 1-bit 2-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 2
+ 12-bit 13-to-1 multiplexer                            : 1
+ 12-bit 2-to-1 multiplexer                             : 6
+ 16-bit 2-to-1 multiplexer                             : 5
+ 2-bit 2-to-1 multiplexer                              : 6
+ 32-bit 2-to-1 multiplexer                             : 1
+ 6-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 8
+ 16-bit shifter logical left                           : 2
+ 16-bit shifter logical right                          : 2
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 2
+# FSMs                                                 : 10
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <counter_2>.
+The following registers are absorbed into counter <C>: 1 register on signal <C>.
+Unit <counter_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_3>.
+The following registers are absorbed into counter <C>: 1 register on signal <C>.
+Unit <counter_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_4>.
+The following registers are absorbed into counter <C>: 1 register on signal <C>.
+Unit <counter_4> synthesized (advanced).
+
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <C>: 1 register on signal <C>.
+Unit <debouncer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <lut>.
+INFO:Xst:3217 - HDL ADVISOR - Register <D> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_mem> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 65536-word x 12-bit                 |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <A>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_mem> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+Unit <lut> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 65536x12-bit single-port distributed Read Only RAM    : 1
+# Adders/Subtractors                                   : 7
+ 10-bit subtractor                                     : 2
+ 2-bit adder                                           : 3
+ 2-bit subtractor                                      : 2
+# Counters                                             : 8
+ 10-bit up counter                                     : 2
+ 16-bit up counter                                     : 5
+ 6-bit up counter                                      : 1
+# Registers                                            : 98
+ Flip-Flops                                            : 98
+# Comparators                                          : 12
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 8
+ 4-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 17
+ 1-bit 2-to-1 multiplexer                              : 4
+ 12-bit 13-to-1 multiplexer                            : 1
+ 12-bit 2-to-1 multiplexer                             : 6
+ 2-bit 2-to-1 multiplexer                              : 5
+ 32-bit 2-to-1 multiplexer                             : 1
+# Logic shifters                                       : 8
+ 16-bit shifter logical left                           : 2
+ 16-bit shifter logical right                          : 2
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 2
+# FSMs                                                 : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <m0/FSM_0> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_0> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_0> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_0> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_0> on signal <ps[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+ 10    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <m0/FSM_1> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_1> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_1> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_1> on signal <ps[1:2]> with user encoding.
+Optimizing FSM <m0/FSM_1> on signal <ps[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+ 10    | 10
+-------------------
+
+Optimizing unit <main> ...
+
+Optimizing unit <btn_flsm> ...
+
+Optimizing unit <reg_array> ...
+
+Optimizing unit <vga> ...
+
+Optimizing unit <vga_color_sel> ...
+
+Optimizing unit <lut> ...
+WARNING:Xst:1710 - FF/Latch <m1/mem_6> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_7> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_14> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_15> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_22> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_23> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_24> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_25> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_26> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_27> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_28> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_29> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_30> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/mem_31> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_6> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_7> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_14> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_15> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_22> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_23> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_24> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_25> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_26> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_27> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_28> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_29> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_30> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m1/memO_31> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:3203 - The FF/Latch <m0/wd_1> in Unit <main> is the opposite to the following FF/Latch, which will be removed : <m0/wd_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 16.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 195
+ Flip-Flops                                            : 195
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1854
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 1
+#      LUT2                        : 93
+#      LUT3                        : 199
+#      LUT4                        : 161
+#      LUT5                        : 281
+#      LUT6                        : 852
+#      MUXCY                       : 93
+#      MUXF7                       : 68
+#      VCC                         : 1
+#      XORCY                       : 100
+# FlipFlops/Latches                : 195
+#      FD                          : 14
+#      FDC                         : 114
+#      FDCE                        : 67
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 20
+#      IBUF                        : 6
+#      OBUF                        : 14
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             195  out of  18224     1%  
+ Number of Slice LUTs:                 1591  out of   9112    17%  
+    Number used as Logic:              1591  out of   9112    17%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1631
+   Number with an unused Flip Flop:    1436  out of   1631    88%  
+   Number with an unused LUT:            40  out of   1631     2%  
+   Number of fully used LUT-FF pairs:   155  out of   1631     9%  
+   Number of unique control sets:        10
+
+IO Utilization: 
+ Number of IOs:                          21
+ Number of bonded IOBs:                  21  out of    232     9%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 195   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 12.434ns (Maximum Frequency: 80.427MHz)
+   Minimum input arrival time before clock: 4.472ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 12.434ns (frequency: 80.427MHz)
+  Total number of paths / destination ports: 735801 / 257
+-------------------------------------------------------------------------
+Delay:               12.434ns (Levels of Logic = 11)
+  Source:            m2/hc/C_0 (FF)
+  Destination:       m2/m0/m0/D_11 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: m2/hc/C_0 to m2/m0/m0/D_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            15   0.447   0.981  m2/hc/C_0 (m2/hc/C_0)
+     INV:I->O            366   0.206   2.181  m2/m0/sdH/R<0>1_INV_0 (m2/m0/n0054<0>)
+     LUT2:I0->O           13   0.203   0.933  m2/m0/m0_Mram_mem536132169 (m2/m0/m0_Mram_mem107313258)
+     LUT6:I5->O            2   0.205   0.617  m2/m0/m0_A<6>_mmx_out1_1 (m2/m0/m0_A<6>_mmx_out11)
+     LUT6:I5->O            2   0.205   0.617  m2/m0/m0_SF24918 (m2/m0/m0_SF151718)
+     LUT5:I4->O            3   0.205   0.755  m2/m0/m0_SF24922 (m2/m0/m0_SF151722)
+     LUT6:I4->O            1   0.203   0.580  m2/m0/m0_SF8897_SW3 (m2/m0/m0_N1148)
+     LUT6:I5->O            4   0.205   0.912  m2/m0/m0_SF8897 (m2/m0/m0_SF15817)
+     LUT6:I3->O            3   0.205   0.898  m2/m0/m0_Mram_mem178132146 (m2/m0/m0_Mram_mem1073132145)
+     LUT6:I2->O            1   0.203   0.580  m2/m0/m0_Mram_mem178132162 (m2/m0/m0_Mram_mem1073132161)
+     LUT6:I5->O            1   0.205   0.580  m2/m0/m0_Mram_mem1252132358_SW0 (m2/m0/m0_N1072)
+     LUT6:I5->O            5   0.205   0.000  m2/m0/m0_Mram_mem1252132358 (m2/m0/m0/_n0007<10>)
+     FDC:D                     0.102          m2/m0/m0/D_10
+    ----------------------------------------
+    Total                     12.434ns (2.799ns logic, 9.635ns route)
+                                       (22.5% logic, 77.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 191 / 191
+-------------------------------------------------------------------------
+Offset:              4.472ns (Levels of Logic = 2)
+  Source:            btnCpuReset (PAD)
+  Destination:       m0/pL/ps_FSM_FFd1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: btnCpuReset to m0/pL/ps_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  btnCpuReset_IBUF (btnCpuReset_IBUF)
+     INV:I->O            181   0.206   2.036  rst1_INV_0 (rst)
+     FDCE:CLR                  0.430          m0/wd_1
+    ----------------------------------------
+    Total                      4.472ns (1.858ns logic, 2.614ns route)
+                                       (41.5% logic, 58.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            m2/vgaRGB_11 (FF)
+  Destination:       vgaR<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: m2/vgaRGB_11 to vgaR<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  m2/vgaRGB_11 (m2/vgaRGB_11)
+     OBUF:I->O                 2.571          vgaR_3_OBUF (vgaR<3>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   12.434|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 70.00 secs
+Total CPU time to Xst completion: 70.02 secs
+ 
+--> 
+
+Total memory usage is 342428 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   44 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

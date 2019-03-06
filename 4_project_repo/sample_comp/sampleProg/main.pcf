@@ -1,0 +1,77 @@
+//! **************************************************************************
+// Written by: Map P.68d on Tue Mar 05 12:42:44 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "btnCpuReset" LOCATE = SITE "T10" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "btnC" LOCATE = SITE "B8" LEVEL 1;
+COMP "btnD" LOCATE = SITE "C9" LEVEL 1;
+COMP "btnL" LOCATE = SITE "C4" LEVEL 1;
+COMP "btnR" LOCATE = SITE "D9" LEVEL 1;
+COMP "btnU" LOCATE = SITE "A8" LEVEL 1;
+COMP "vgaB<1>" LOCATE = SITE "R7" LEVEL 1;
+COMP "vgaB<2>" LOCATE = SITE "T7" LEVEL 1;
+COMP "vgaG<0>" LOCATE = SITE "P8" LEVEL 1;
+COMP "vgaG<1>" LOCATE = SITE "T6" LEVEL 1;
+COMP "vgaG<2>" LOCATE = SITE "V6" LEVEL 1;
+COMP "vgaR<0>" LOCATE = SITE "U7" LEVEL 1;
+COMP "vgaR<1>" LOCATE = SITE "V7" LEVEL 1;
+COMP "vgaR<2>" LOCATE = SITE "N7" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "m0/pL/ps_FSM_FFd1" BEL "m0/pR/ps_FSM_FFd1" BEL
+        "m0/pC/ps_FSM_FFd1" BEL "m0/pU/ps_FSM_FFd1" BEL "m0/pD/ps_FSM_FFd1"
+        BEL "m0/pL/ps_FSM_FFd2" BEL "m0/pR/ps_FSM_FFd2" BEL
+        "m0/pC/ps_FSM_FFd2" BEL "m0/pU/ps_FSM_FFd2" BEL "m0/pD/ps_FSM_FFd2"
+        BEL "m0/dbC/C_15" BEL "m0/dbC/C_14" BEL "m0/dbC/C_13" BEL
+        "m0/dbC/C_12" BEL "m0/dbC/C_11" BEL "m0/dbC/C_10" BEL "m0/dbC/C_9" BEL
+        "m0/dbC/C_8" BEL "m0/dbC/C_7" BEL "m0/dbC/C_6" BEL "m0/dbC/C_5" BEL
+        "m0/dbC/C_4" BEL "m0/dbC/C_3" BEL "m0/dbC/C_2" BEL "m0/dbC/C_1" BEL
+        "m0/dbC/C_0" BEL "m0/dbR/C_15" BEL "m0/dbR/C_14" BEL "m0/dbR/C_13" BEL
+        "m0/dbR/C_12" BEL "m0/dbR/C_11" BEL "m0/dbR/C_10" BEL "m0/dbR/C_9" BEL
+        "m0/dbR/C_8" BEL "m0/dbR/C_7" BEL "m0/dbR/C_6" BEL "m0/dbR/C_5" BEL
+        "m0/dbR/C_4" BEL "m0/dbR/C_3" BEL "m0/dbR/C_2" BEL "m0/dbR/C_1" BEL
+        "m0/dbR/C_0" BEL "m0/dbU/C_15" BEL "m0/dbU/C_14" BEL "m0/dbU/C_13" BEL
+        "m0/dbU/C_12" BEL "m0/dbU/C_11" BEL "m0/dbU/C_10" BEL "m0/dbU/C_9" BEL
+        "m0/dbU/C_8" BEL "m0/dbU/C_7" BEL "m0/dbU/C_6" BEL "m0/dbU/C_5" BEL
+        "m0/dbU/C_4" BEL "m0/dbU/C_3" BEL "m0/dbU/C_2" BEL "m0/dbU/C_1" BEL
+        "m0/dbU/C_0" BEL "m0/dbL/C_15" BEL "m0/dbL/C_14" BEL "m0/dbL/C_13" BEL
+        "m0/dbL/C_12" BEL "m0/dbL/C_11" BEL "m0/dbL/C_10" BEL "m0/dbL/C_9" BEL
+        "m0/dbL/C_8" BEL "m0/dbL/C_7" BEL "m0/dbL/C_6" BEL "m0/dbL/C_5" BEL
+        "m0/dbL/C_4" BEL "m0/dbL/C_3" BEL "m0/dbL/C_2" BEL "m0/dbL/C_1" BEL
+        "m0/dbL/C_0" BEL "m0/dbC/ps_FSM_FFd1" BEL "m0/dbC/ps_FSM_FFd2" BEL
+        "m0/dbR/ps_FSM_FFd2" BEL "m0/dbL/ps_FSM_FFd1" BEL "m0/dbR/ps_FSM_FFd1"
+        BEL "m0/dbL/ps_FSM_FFd2" BEL "m0/dbU/ps_FSM_FFd1" BEL
+        "m0/dbU/ps_FSM_FFd2" BEL "m0/dbD/ps_FSM_FFd1" BEL "m0/dbD/ps_FSM_FFd2"
+        BEL "m0/dbD/C_15" BEL "m0/dbD/C_14" BEL "m0/dbD/C_13" BEL
+        "m0/dbD/C_12" BEL "m0/dbD/C_11" BEL "m0/dbD/C_10" BEL "m0/dbD/C_9" BEL
+        "m0/dbD/C_8" BEL "m0/dbD/C_7" BEL "m0/dbD/C_6" BEL "m0/dbD/C_5" BEL
+        "m0/dbD/C_4" BEL "m0/dbD/C_3" BEL "m0/dbD/C_2" BEL "m0/dbD/C_1" BEL
+        "m0/dbD/C_0" BEL "m0/addr_3" BEL "m0/addr_0" BEL "m0/addr_1" BEL
+        "m0/addr_2" BEL "m0/wd_1" BEL "m1/memO_21" BEL "m1/memO_20" BEL
+        "m1/memO_19" BEL "m1/memO_18" BEL "m1/memO_17" BEL "m1/memO_16" BEL
+        "m1/memO_13" BEL "m1/memO_12" BEL "m1/memO_11" BEL "m1/memO_10" BEL
+        "m1/memO_9" BEL "m1/memO_8" BEL "m1/memO_5" BEL "m1/memO_4" BEL
+        "m1/memO_3" BEL "m1/memO_2" BEL "m1/memO_1" BEL "m1/memO_0" BEL
+        "m1/mem_21" BEL "m1/mem_20" BEL "m1/mem_19" BEL "m1/mem_18" BEL
+        "m1/mem_17" BEL "m1/mem_16" BEL "m1/mem_13" BEL "m1/mem_12" BEL
+        "m1/mem_11" BEL "m1/mem_10" BEL "m1/mem_9" BEL "m1/mem_8" BEL
+        "m1/mem_5" BEL "m1/mem_4" BEL "m1/mem_3" BEL "m1/mem_2" BEL "m1/mem_1"
+        BEL "m1/mem_0" BEL "m2/hc/C_9" BEL "m2/hc/C_8" BEL "m2/hc/C_7" BEL
+        "m2/hc/C_6" BEL "m2/hc/C_5" BEL "m2/hc/C_4" BEL "m2/hc/C_3" BEL
+        "m2/hc/C_2" BEL "m2/hc/C_1" BEL "m2/hc/C_0" BEL "m2/fc/C_5" BEL
+        "m2/fc/C_4" BEL "m2/fc/C_3" BEL "m2/fc/C_2" BEL "m2/fc/C_1" BEL
+        "m2/fc/C_0" BEL "m2/vc/C_9" BEL "m2/vc/C_8" BEL "m2/vc/C_7" BEL
+        "m2/vc/C_6" BEL "m2/vc/C_5" BEL "m2/vc/C_4" BEL "m2/vc/C_3" BEL
+        "m2/vc/C_2" BEL "m2/vc/C_1" BEL "m2/vc/C_0" BEL "m2/cc/C_0" BEL
+        "m2/cc/C_1" BEL "m2/vgaRGB_11" BEL "m2/vgaRGB_10" BEL "m2/vgaRGB_9"
+        BEL "m2/vgaRGB_8" BEL "m2/vgaRGB_7" BEL "m2/vgaRGB_6" BEL
+        "m2/vgaRGB_5" BEL "m2/vgaRGB_4" BEL "m2/vgaRGB_3" BEL "m2/vgaRGB_2"
+        BEL "m2/vgaRGB_1" BEL "m2/vgaRGB_0" BEL "m2/HS" BEL "m2/VS" BEL
+        "m2/m0/m0/D_11" BEL "m2/m0/m0/D_10" BEL "m2/m0/m0/D_9" BEL
+        "m2/m0/m0/D_8" BEL "m2/m0/m0/D_7" BEL "m2/m0/m0/D_6" BEL
+        "m2/m0/m0/D_5" BEL "m2/m0/m0/D_4" BEL "m2/m0/m0/D_3" BEL
+        "m2/m0/m0/D_2" BEL "m2/m0/m0/D_1" BEL "m2/m0/m0/D_0" BEL
+        "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

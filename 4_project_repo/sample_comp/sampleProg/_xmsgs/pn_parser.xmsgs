@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/btn_flsm.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/counter.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/debouncer.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/go_decode.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/go_encode.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/lut.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/main.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/pulser.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/reg_array.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/rgb_pwm.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/shift_divider.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/vga.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/152/Desktop/lab6_group11/UCLA_CSM152A_src/4_project_repo/sample_comp/sampleProg/vga_color_sel.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

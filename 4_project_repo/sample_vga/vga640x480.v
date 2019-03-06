@@ -37,6 +37,8 @@ parameter hbp = 144; 	// end of horizontal back porch
 parameter hfp = 784; 	// beginning of horizontal front porch
 parameter vbp = 31; 		// end of vertical back porch
 parameter vfp = 511; 	// beginning of vertical front porch
+parameter boxDimension = 128;
+parameter lineThickness = 10;
 // active horizontal video is therefore: 784 - 144 = 640
 // active vertical video is therefore: 511 - 31 = 480
 
@@ -86,6 +88,8 @@ end
 // give values to variables of type: wire
 assign hsync = (hc < hpulse) ? 0:1;
 assign vsync = (vc < vpulse) ? 0:1;
+parameter vOffset = 50;
+parameter hOffset = 144;
 
 // display 100% saturation colorbars
 // ------------------------
@@ -103,7 +107,60 @@ begin
 		// now display different colors every 80 pixels
 		// while we're within the active horizontal range
 		// -----------------
-		// display white bar
+		
+		//If we're in the game grid (with 9 boxes)
+		if(hc < hbp + 402 && vc < vbp + 402)begin
+			if(hc > hbp + 128 && hc < hbp + 138) begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+			
+			else if(hc > hbp + 264 && hc < hbp + 274) begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+			
+			else if(vc > vbp + 128 && vc < vbp + 138) begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+			
+			else if(vc > vbp + 264 && vc < vbp + 274) begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+		end
+		
+		// we're outside active horizontal range so display black
+		else
+		begin
+			red = 0;
+			green = 0;
+			blue = 0;
+		end
+		/*
+			the # grid
+			if horizontal 
+		*/
+		
+	end//end of if within vertical active range
+	//line width =2px
+	// we're outside active vertical range so display black
+	else
+	begin
+		red = 0;
+		green = 0;
+		blue = 0;
+	end
+end
+
+endmodule
+
+/*
 		if (hc >= hbp && hc < (hbp+80))
 		begin
 			red = 3'b111;
@@ -159,26 +216,4 @@ begin
 			green = 3'b000;
 			blue = 2'b00;
 		end
-		// we're outside active horizontal range so display black
-		else
-		begin
-			red = 0;
-			green = 0;
-			blue = 0;
-		end
-		/*
-			the # grid
-			if horizontal 
 		*/
-	end//end of if within vertical active range
-	//line width =2px
-	// we're outside active vertical range so display black
-	else
-	begin
-		red = 0;
-		green = 0;
-		blue = 0;
-	end
-end
-
-endmodule
