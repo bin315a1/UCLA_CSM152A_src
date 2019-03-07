@@ -1,0 +1,542 @@
+Release 14.7 - xst P.20160913 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: ticTacToe_main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ticTacToe_main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ticTacToe_main"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : ticTacToe_main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" into library work
+Parsing module <vgaManager>.
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/clockDivider.v" into library work
+Parsing module <clockDivider>.
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" into library work
+Parsing module <ticTacToe_main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <ticTacToe_main>.
+
+Elaborating module <clockDivider>.
+WARNING:HDLCompiler:413 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/clockDivider.v" Line 41: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/clockDivider.v" Line 50: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" Line 43: Assignment to clk_500hz ignored, since the identifier is never used
+
+Elaborating module <vgaManager>.
+WARNING:HDLCompiler:413 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" Line 52: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" Line 56: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" Line 62: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" Line 62: Assignment to hsync ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" Line 63: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" Line 63: Assignment to vsync ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" Line 72: Assignment to hsync ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" Line 72: Size mismatch in connection of port <red>. Formal port size is 3-bit while actual signal size is 1-bit.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ticTacToe_main>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v".
+WARNING:Xst:647 - Input <btns> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnu> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 43: Output port <clk_500hz_cd> of the instance <cd> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 72: Output port <hsync_vm> of the instance <vm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 72: Output port <vsync_vm> of the instance <vm> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <ticTacToe_main> synthesized.
+
+Synthesizing Unit <clockDivider>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/clockDivider.v".
+        bufferCount_25Mhz = 4
+        bufferCount_500hz = 20000
+    Found 16-bit register for signal <clk_500hz_bufferReg>.
+    Found 1-bit register for signal <clk_500hz_reg>.
+    Found 3-bit register for signal <clk_25Mhz_bufferReg>.
+    Found 3-bit adder for signal <clk_25Mhz_bufferReg[2]_GND_2_o_add_3_OUT> created at line 41.
+    Found 16-bit adder for signal <clk_500hz_bufferReg[15]_GND_2_o_add_7_OUT> created at line 50.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+Unit <clockDivider> synthesized.
+
+Synthesizing Unit <vgaManager>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v".
+        hpixels = 800
+        vlines = 521
+        hpulse = 96
+        vpulse = 2
+        hbp = 144
+        hfp = 784
+        vbp = 31
+        vfp = 511
+        boxDimension = 128
+        lineThickness = 10
+WARNING:Xst:653 - Signal <hsync_vm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <vsync_vm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 10-bit register for signal <vc>.
+    Found 10-bit register for signal <hc>.
+    Found 10-bit adder for signal <hc[9]_GND_3_o_add_2_OUT> created at line 52.
+    Found 10-bit adder for signal <vc[9]_GND_3_o_add_4_OUT> created at line 56.
+WARNING:Xst:737 - Found 1-bit latch for signal <red<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 10-bit comparator greater for signal <hc[9]_PWR_3_o_LessThan_2_o> created at line 51
+    Found 10-bit comparator lessequal for signal <vc[9]_PWR_3_o_LessThan_4_o> created at line 55
+    Found 10-bit comparator lessequal for signal <n0009> created at line 71
+    Found 10-bit comparator greater for signal <vc[9]_GND_3_o_LessThan_16_o> created at line 71
+    Found 10-bit comparator greater for signal <hc[9]_PWR_3_o_LessThan_17_o> created at line 73
+    Found 10-bit comparator greater for signal <vc[9]_GND_3_o_LessThan_18_o> created at line 73
+    Found 10-bit comparator greater for signal <GND_3_o_hc[9]_LessThan_19_o> created at line 75
+    Found 10-bit comparator greater for signal <hc[9]_GND_3_o_LessThan_20_o> created at line 75
+    Found 10-bit comparator greater for signal <GND_3_o_hc[9]_LessThan_21_o> created at line 81
+    Found 10-bit comparator greater for signal <hc[9]_GND_3_o_LessThan_22_o> created at line 81
+    Found 10-bit comparator greater for signal <GND_3_o_vc[9]_LessThan_23_o> created at line 87
+    Found 10-bit comparator greater for signal <vc[9]_GND_3_o_LessThan_24_o> created at line 87
+    Found 10-bit comparator greater for signal <GND_3_o_vc[9]_LessThan_25_o> created at line 93
+    Found 10-bit comparator greater for signal <vc[9]_GND_3_o_LessThan_26_o> created at line 93
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   1 Latch(s).
+	inferred  14 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <vgaManager> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 10-bit adder                                          : 2
+ 16-bit adder                                          : 1
+ 3-bit adder                                           : 1
+# Registers                                            : 5
+ 1-bit register                                        : 1
+ 10-bit register                                       : 2
+ 16-bit register                                       : 1
+ 3-bit register                                        : 1
+# Latches                                              : 1
+ 1-bit latch                                           : 1
+# Comparators                                          : 14
+ 10-bit comparator greater                             : 12
+ 10-bit comparator lessequal                           : 2
+# Multiplexers                                         : 1
+ 1-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <clockDivider>.
+The following registers are absorbed into counter <clk_25Mhz_bufferReg>: 1 register on signal <clk_25Mhz_bufferReg>.
+The following registers are absorbed into counter <clk_500hz_bufferReg>: 1 register on signal <clk_500hz_bufferReg>.
+Unit <clockDivider> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vgaManager>.
+The following registers are absorbed into counter <hc>: 1 register on signal <hc>.
+The following registers are absorbed into counter <vc>: 1 register on signal <vc>.
+Unit <vgaManager> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 16-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 1
+ Flip-Flops                                            : 1
+# Comparators                                          : 14
+ 10-bit comparator greater                             : 12
+ 10-bit comparator lessequal                           : 2
+# Multiplexers                                         : 1
+ 1-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <cd/clk_500hz_reg> of sequential type is unconnected in block <ticTacToe_main>.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    red_2 in unit <vgaManager>
+
+
+Optimizing unit <ticTacToe_main> ...
+
+Optimizing unit <vgaManager> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ticTacToe_main, actual ratio is 0.
+Latch vm/red_2 has been replicated 2 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 23
+ Flip-Flops                                            : 23
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : ticTacToe_main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 93
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 18
+#      LUT2                        : 1
+#      LUT3                        : 4
+#      LUT4                        : 14
+#      LUT5                        : 4
+#      LUT6                        : 9
+#      MUXCY                       : 18
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 26
+#      FD                          : 13
+#      FDR                         : 10
+#      LD                          : 3
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      OBUF                        : 3
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              23  out of  18224     0%  
+ Number of Slice LUTs:                   53  out of   9112     0%  
+    Number used as Logic:                53  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     53
+   Number with an unused Flip Flop:      30  out of     53    56%  
+   Number with an unused LUT:             0  out of     53     0%  
+   Number of fully used LUT-FF pairs:    23  out of     53    43%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          14
+ Number of bonded IOBs:                   4  out of    232     1%  
+    IOB Flip Flops/Latches:               3
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 3     |
+cd/clk_25Mhz_bufferReg_2           | BUFG                   | 20    |
+vm/red_2_G(vm/red_2_G:O)           | NONE(*)(vm/red_2)      | 3     |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.885ns (Maximum Frequency: 204.687MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 3.648ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.984ns (frequency: 504.007MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               1.984ns (Levels of Logic = 1)
+  Source:            cd/clk_25Mhz_bufferReg_0 (FF)
+  Destination:       cd/clk_25Mhz_bufferReg_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: cd/clk_25Mhz_bufferReg_0 to cd/clk_25Mhz_bufferReg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.447   0.650  cd/clk_25Mhz_bufferReg_0 (cd/clk_25Mhz_bufferReg_0)
+     INV:I->O              1   0.206   0.579  cd/Mcount_clk_25Mhz_bufferReg_xor<0>11_INV_0 (Result<0>)
+     FD:D                      0.102          cd/clk_25Mhz_bufferReg_0
+    ----------------------------------------
+    Total                      1.984ns (0.755ns logic, 1.229ns route)
+                                       (38.1% logic, 61.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'cd/clk_25Mhz_bufferReg_2'
+  Clock period: 4.885ns (frequency: 204.687MHz)
+  Total number of paths / destination ports: 480 / 30
+-------------------------------------------------------------------------
+Delay:               4.885ns (Levels of Logic = 4)
+  Source:            vm/hc_0 (FF)
+  Destination:       vm/vc_9 (FF)
+  Source Clock:      cd/clk_25Mhz_bufferReg_2 rising
+  Destination Clock: cd/clk_25Mhz_bufferReg_2 rising
+
+  Data Path: vm/hc_0 to vm/vc_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.447   0.995  vm/hc_0 (vm/hc_0)
+     LUT5:I0->O            1   0.203   0.580  vm/_n006421 (vm/_n00642)
+     LUT6:I5->O           21   0.205   1.114  vm/_n006422 (vm/hc[9]_PWR_3_o_LessThan_2_o_inv)
+     LUT6:I5->O            9   0.205   0.830  vm/_n0064 (vm/_n0064)
+     LUT4:I3->O            1   0.205   0.000  vm/vc_9_rstpot (vm/vc_9_rstpot)
+     FD:D                      0.102          vm/vc_9
+    ----------------------------------------
+    Total                      4.885ns (1.367ns logic, 3.518ns route)
+                                       (28.0% logic, 72.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vm/red_2_G'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              3.648ns (Levels of Logic = 1)
+  Source:            vm/red_2_1 (LATCH)
+  Destination:       vgaRed (PAD)
+  Source Clock:      vm/red_2_G falling
+
+  Data Path: vm/red_2_1 to vgaRed
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  vm/red_2_1 (vm/red_2_1)
+     OBUF:I->O                 2.571          vgaRed_OBUF (vgaRed)
+    ----------------------------------------
+    Total                      3.648ns (3.069ns logic, 0.579ns route)
+                                       (84.1% logic, 15.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock cd/clk_25Mhz_bufferReg_2
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+cd/clk_25Mhz_bufferReg_2|    4.885|         |         |         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.984|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock vm/red_2_G
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+cd/clk_25Mhz_bufferReg_2|         |         |    5.903|         |
+------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 11.18 secs
+ 
+--> 
+
+
+Total memory usage is 384292 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

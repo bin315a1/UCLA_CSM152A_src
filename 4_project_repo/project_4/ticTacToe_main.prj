@@ -1,0 +1,3 @@
+verilog work "vgaManager.v"
+verilog work "clockDivider.v"
+verilog work "ticTacToe_main.v"

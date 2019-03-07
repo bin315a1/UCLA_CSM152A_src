@@ -28,22 +28,20 @@ module ticTacToe_main(
 	input btnr,
 	input rst,
 	//outputs: 3 vgas, 2 syncs, segs, ans
-	//output vgaRed,
-	//output vgaGreen,
-	//output vgaBlue,
-	//output Hsync,
-	//output Vsync,
-	//output seg,
-	//output an
-	output test_p1;
-	output test_p2;
+	output vgaRed,
+	output vgaGreen,
+	output vgaBlue,
+	output Hsync,
+	output Vsync,
+	output seg,
+	output an
+	//output test_p1,
+	//output test_p2
     );
 	 //clocks
 	 wire clk_25Mhz, clk_500hz;
 	 clockDivider cd(.clk_cd(clk), .clk_25Mhz_cd(clk_25Mhz), .clk_500hz_cd(clk_500hz));
 	 
-	 //gameplay
-	 gameManager gm()
 	 //player1 and player2 grid
 	 wire [0:8] p1Grid;
 	 wire [0:8] p2Grid;
@@ -71,6 +69,7 @@ module ticTacToe_main(
 	 //enable display
 	 wire en_display;
 	 
+	 vgaManager vm(.clk_25Mhz_vm(clk_25Mhz), .hsync_vm(hsync), .vsync_vm(vsync), .red(vgaRed), .green(vgaGreen), .blue(vgaBlue));
 	
 	
 endmodule

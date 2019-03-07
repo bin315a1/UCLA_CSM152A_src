@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Tue Mar  5 07:21:47 2019">
+<application name="pn" timeStamp="Wed Mar  6 05:13:29 2019">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="E94FC51778C83AEF7021EF80EDBA83A7" type="project"/>
 <property name="ProjectIteration" value="0" type="project"/>
@@ -26,16 +26,16 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_intWbtProjectID" value="E94FC51778C83AEF7021EF80EDBA83A7" type="design"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
-<property name="PROP_AutoTop" value="true" type="design"/>
+<property name="PROP_AutoTop" value="false" type="design"/>
 <property name="PROP_DevFamily" value="Spartan6" type="design"/>
-<property name="PROP_DevDevice" value="xc6slx45t" type="design"/>
+<property name="PROP_DevDevice" value="xc6slx16" type="design"/>
 <property name="PROP_DevFamilyPMName" value="spartan6" type="design"/>
-<property name="PROP_DevPackage" value="fgg484" type="design"/>
+<property name="PROP_DevPackage" value="csg324" type="design"/>
 <property name="PROP_Synthesis_Tool" value="XST (VHDL/Verilog)" type="design"/>
 <property name="PROP_DevSpeed" value="-3" type="design"/>
 <property name="PROP_PreferredLanguage" value="Verilog" type="design"/>
 <property name="FILE_UCF" value="1" type="source"/>
-<property name="FILE_VERILOG" value="5" type="source"/>
+<property name="FILE_VERILOG" value="6" type="source"/>
 </section>
 </application>
 </document>
