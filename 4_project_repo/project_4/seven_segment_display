@@ -47,8 +47,8 @@ module display(
 			case(iterator)
 				3'b001: seg_reg = 8'b11010101;  // W : for the first anode
 				3'b010: seg_reg = 8'b10001000;  // A : for the second anode
-				3'b011: seg_reg = 8'b10101110;	// R : for the third anode
-				3'b100: seg_reg = 8'b11000000;	// D : for the fourth anode; looks like 0
+				3'b011: seg_reg = 8'b11111010;	// r : for the third anode
+				3'b100: seg_reg = 8'b11000010;	// d : for the fourth anode; 
 			endcase
 			iterator = iterator + 1;
 		end
