@@ -107,8 +107,8 @@ module display(
 					4'b1000 : seg_reg = 8'b10000000;
 					4'b1001 : seg_reg = 8'b10010000;
 					4'b1011 : seg_reg = 8'b11111111; //blank
-					//default to 0
-					default : seg_reg = 8'b11000000;
+					//default to blank
+					default : seg_reg = 8'b11111111; //blank
 				endcase
 				numGamesPlayed_d= numGamesPlayed_d/10;
 				iterator = iterator + 1;
