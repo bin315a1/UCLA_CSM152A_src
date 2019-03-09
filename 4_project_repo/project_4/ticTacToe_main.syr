@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: ticTacToe_main.prj
@@ -108,8 +108,14 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameStatus.v" into library work
+Parsing module <gameStatus>.
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/debouncer.v" into library work
+Parsing module <debouncer>.
 Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/vgaManager.v" into library work
 Parsing module <vgaManager>.
+Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" into library work
+Parsing module <gameManager>.
 Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/clockDivider.v" into library work
 Parsing module <clockDivider>.
 Analyzing Verilog file "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" into library work
@@ -136,21 +142,29 @@ WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_projec
 WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" Line 72: Assignment to hsync ignored, since the identifier is never used
 WARNING:HDLCompiler:189 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" Line 72: Size mismatch in connection of port <red>. Formal port size is 3-bit while actual signal size is 1-bit.
 
+Elaborating module <gameManager>.
+
+Elaborating module <debouncer>.
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" Line 39: Assignment to btns_db ignored, since the identifier is never used
+
+Elaborating module <gameStatus>.
+WARNING:HDLCompiler:1127 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" Line 73: Assignment to cursorPosition ignored, since the identifier is never used
+WARNING:Xst:2972 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameManager.v" line 39. All outputs of instance <d0> of block <debouncer> are unconnected in block <gameManager>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 73. All outputs of instance <gm> of block <gameManager> are unconnected in block <ticTacToe_main>. Underlying logic will be removed.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <ticTacToe_main>.
     Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v".
-WARNING:Xst:647 - Input <btns> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <btnu> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <btnl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <btnd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 43: Output port <clk_500hz_cd> of the instance <cd> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 72: Output port <hsync_vm> of the instance <vm> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 72: Output port <vsync_vm> of the instance <vm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 73: Output port <cursorPosition_gm> of the instance <gm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 73: Output port <gameState_gm> of the instance <gm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 73: Output port <p1Grid_gm> of the instance <gm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/ticTacToe_main.v" line 73: Output port <p2Grid_gm> of the instance <gm> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <ticTacToe_main> synthesized.
@@ -209,6 +223,46 @@ WARNING:Xst:737 - Found 1-bit latch for signal <red<2>>. Latches may be generate
 	inferred  14 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <vgaManager> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/debouncer.v".
+    Found 1-bit register for signal <button_out_reg>.
+    Found 1-bit register for signal <contact_ct<15>>.
+    Found 1-bit register for signal <contact_ct<14>>.
+    Found 1-bit register for signal <contact_ct<13>>.
+    Found 1-bit register for signal <contact_ct<12>>.
+    Found 1-bit register for signal <contact_ct<11>>.
+    Found 1-bit register for signal <contact_ct<10>>.
+    Found 1-bit register for signal <contact_ct<9>>.
+    Found 1-bit register for signal <contact_ct<8>>.
+    Found 1-bit register for signal <contact_ct<7>>.
+    Found 1-bit register for signal <contact_ct<6>>.
+    Found 1-bit register for signal <contact_ct<5>>.
+    Found 1-bit register for signal <contact_ct<4>>.
+    Found 1-bit register for signal <contact_ct<3>>.
+    Found 1-bit register for signal <contact_ct<2>>.
+    Found 1-bit register for signal <contact_ct<1>>.
+    Found 1-bit register for signal <contact_ct<0>>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <gameStatus>.
+    Related source file is "/home/ise/Xilinx_host/UCLA_CSM152A_src_repo/4_project_repo/project_4/gameStatus.v".
+        win1 = 9'b111000000
+        win2 = 9'b000111000
+        win3 = 9'b000000111
+        win4 = 9'b100100100
+        win5 = 9'b010010010
+        win6 = 9'b001001001
+        win7 = 9'b100010001
+        win8 = 9'b001010100
+    Found 1-bit register for signal <gameState_gs<2>>.
+    Found 1-bit register for signal <gameState_gs<1>>.
+    Found 1-bit register for signal <gameState_gs<0>>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <gameStatus> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -529,14 +583,14 @@ cd/clk_25Mhz_bufferReg_2|         |         |    5.903|         |
 
 
 Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 11.18 secs
+Total CPU time to Xst completion: 11.45 secs
  
 --> 
 
 
-Total memory usage is 384292 kilobytes
+Total memory usage is 384336 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   22 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 

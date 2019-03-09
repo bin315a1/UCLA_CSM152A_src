@@ -83,13 +83,13 @@ module vgaManager(
 					green = 3'b111;
 					blue = 2'b11;
 				end
-				//draws the lower(?) horizontal line
+				//draws the upper(?) horizontal line
 				else if(vc > vbp + 128 && vc < vbp + 138) begin
 					red = 3'b111;
 					green = 3'b111;
 					blue = 2'b11;
 				end
-				//draws the upper(?) horizontal line
+				//draws the lower(?) horizontal line
 				else if(vc > vbp + 264 && vc < vbp + 274) begin
 					red = 3'b111;
 					green = 3'b111;
@@ -111,6 +111,5 @@ module vgaManager(
 			green = 0;
 			blue = 0;
 		end
-	end
-	
+	end	
 endmodule

@@ -70,6 +70,6 @@ module ticTacToe_main(
 	 wire en_display;
 	 
 	 vgaManager vm(.clk_25Mhz_vm(clk_25Mhz), .hsync_vm(hsync), .vsync_vm(vsync), .red(vgaRed), .green(vgaGreen), .blue(vgaBlue));
-	
-	
+	 gameManager gm(.clk_gm(clk), .btns_gm(btns), .btnu_gm(btnu), .btnl_gm(btnl), .btnd_gm(btnd), .btnr_gm(btnr), .rst_gm(rst), .cursorPosition_gm(cursorPosition), .gameState_gm(gameState), .p1Grid_gm(p1Grid), .p2Grid_gm(p2Grid));
+		
 endmodule

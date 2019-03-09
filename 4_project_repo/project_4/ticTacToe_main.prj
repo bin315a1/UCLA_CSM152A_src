@@ -1,3 +1,6 @@
+verilog work "gameStatus.v"
+verilog work "debouncer.v"
 verilog work "vgaManager.v"
+verilog work "gameManager.v"
 verilog work "clockDivider.v"
 verilog work "ticTacToe_main.v"
