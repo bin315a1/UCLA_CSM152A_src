@@ -41,7 +41,7 @@ module gameStatus(
 	
 	initial begin
 		gameState_gs = 0;
-		gameIncrement_gs=0;
+		gameIncrement_gs=3'b000;
 	end
 	
 	//check if the game is over: draw or either winning.
