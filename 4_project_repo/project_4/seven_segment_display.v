@@ -65,7 +65,7 @@ module display(
 		end
 
 		//the game state is 4 -> P1 has won: P 1 L
-		if(gameState_d==3'b100)begin
+		else if(gameState_d==3'b100)begin
 			case(iterator)
 				3'b001: seg_reg = 8'b11111111;  // blank
 				3'b010: seg_reg = 8'b11110001;	// L
