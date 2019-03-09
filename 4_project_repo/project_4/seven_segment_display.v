@@ -54,7 +54,7 @@ module display(
 		end
 
 		//the game state is 3 -> P1 has won: P 2 L 
-		if(gameState_d==3'b011)begin
+		else if(gameState_d==3'b011)begin
 			case(iterator)
 				3'b001: seg_reg = 8'b11111111;  // blank
 				3'b010: seg_reg = 8'b11110001;	// L
@@ -77,7 +77,7 @@ module display(
 
 		
 		//if the desired switch got turned on to show how many games have been played so far
-		if(numGamesPlayedState_d==1'b1)begin
+		else if(numGamesPlayedState_d==1'b1)begin
 			// loop through the 
 			while(numGamesPlayed_d >0 )begin
 				//pick the desired anode based on the iterator
@@ -113,7 +113,17 @@ module display(
 				numGamesPlayed_d= numGamesPlayed_d/10;
 				iterator = iterator + 1;
 			end
-	end
+		end
+		//if non of the state above, 7-seg-dis should show nothing 
+		else beign
+			case(iterator)
+				3'b001: seg_reg = 8'b11111111;  // blank
+				3'b010: seg_reg = 8'b11111111;  // blank
+				3'b011: seg_reg = 8'b11111111;  // blank
+				3'b100: seg_reg = 8'b11111111;  // blank
+			endcase
+			iterator = iterator + 1;
+		end
 	assign seg_d = seg_reg;
 	assign an_d = an_reg;
 
