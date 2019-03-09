@@ -58,7 +58,7 @@ module ticTacToe_main(
 	 //	00  x  x  x
 	 //Y	01  x  x  x
 	 //	02  x  x  x
-	 
+	 wire [3:0] gameIncrement;
 	 //state of game
 	 wire [2:0] gameState;
 	 //0 : p1 turn
@@ -71,6 +71,6 @@ module ticTacToe_main(
 	 wire en_display;
 	 
 	 vgaManager vm(.clk_25Mhz_vm(clk_25Mhz), .hsync_vm(hsync), .vsync_vm(vsync), .red(vgaRed), .green(vgaGreen), .blue(vgaBlue));
-	 gameManager gm(.clk_gm(clk), .btns_gm(btns), .btnu_gm(btnu), .btnl_gm(btnl), .btnd_gm(btnd), .btnr_gm(btnr), .rst_gm(rst), .cursorPosition_gm(cursorPosition), .gameState_gm(gameState), .p1Grid_gm(p1Grid), .p2Grid_gm(p2Grid));
-	seven_segment_display sd( .clk_d(clk_500hz) , .numGamesPlayedState_d(sw[1]) ,  .numGamesPlayed_d() , .gameState_d(gameState) , .an_d(an) , .seg_d(seg) )	
+	 gameManager gm(.clk_gm(clk), .btns_gm(btns), .btnu_gm(btnu), .btnl_gm(btnl), .btnd_gm(btnd), .btnr_gm(btnr), .rst_gm(rst), .cursorPosition_gm(cursorPosition), .gameState_gm(gameState), .gameIncrement_gm(gameIncrement),.p1Grid_gm(p1Grid), .p2Grid_gm(p2Grid));
+	seven_segment_display sd( .clk_d(clk_500hz) , .numGamesPlayedState_d(sw[1]) ,  .numGamesPlayed_d(gameIncrement), .gameState_d(gameState) , .an_d(an) , .seg_d(seg) )	
 endmodule
