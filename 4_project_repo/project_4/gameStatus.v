@@ -23,7 +23,8 @@ module gameStatus(
 	input btns_gs,
 	input [0:8] p1Grid_gs,
 	input [0:8] p2Grid_gs,
-	output reg [2:0] gameState_gs
+	output reg [2:0] gameState_gs,
+	output reg [3:0] gameIncrement_gs // counts the number of games player, it will increment if either of the player wins or the game is draw
     );
 
 	//win- horizontal line
@@ -40,8 +41,9 @@ module gameStatus(
 	
 	initial begin
 		gameState_gs = 0;
+		gameIncrement_gs=0;
 	end
-
+	
 	//check if the game is over: draw or either winning.
 	always@(posedge clk_gs or posedge btns_gs) begin
 	
@@ -58,6 +60,7 @@ module gameStatus(
 			//check if draw
 			if(p1Grid_gs + p2Grid_gs == 9'b111111111)begin
 				gameState_gs = 2;
+				gameIncrement_gs=gameIncrement_gs+ 3'b001;
 			end
 			
 			//check if anyone won
@@ -68,6 +71,7 @@ module gameStatus(
 					case(p1Grid_gs)
 						//if it matches any of the parameters, p1 wins
 							win1,win2,win3,win4,win5,win6,win7,win8: gameState_gs = 3;
+							gameIncrement_gs=gameIncrement_gs+ 3'b001;
 						//else the state stays the same
 						default: gameState_gs = 0;
 					endcase
@@ -77,7 +81,8 @@ module gameStatus(
 				else if(gameState_gs == 1)begin
 					case(p2Grid_gs)
 					//if it matches any of the parameters, p1 wins
-						win1,win2,win3,win4,win5,win6,win7,win8: gameState_gs = 4;
+						win1,win2,win3,win4,win5,win6,win7,win8: gameState_gs = 4;	
+						gameIncrement_gs=gameIncrement_gs+ 3'b001;
 					//else the state stays the same
 					default: gameState_gs = 1;
 					endcase
