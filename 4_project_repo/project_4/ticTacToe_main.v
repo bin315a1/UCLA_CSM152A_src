@@ -26,7 +26,8 @@ module ticTacToe_main(
 	input btnl,
 	input btnd,
 	input btnr,
-	input rst,
+	input rst,  //this should be a switch , sw[0]
+	input sw[1], // this is a swith that would show the number of games player on 7-Seg-Dis
 	//outputs: 3 vgas, 2 syncs, segs, ans
 	output vgaRed,
 	output vgaGreen,
@@ -71,5 +72,5 @@ module ticTacToe_main(
 	 
 	 vgaManager vm(.clk_25Mhz_vm(clk_25Mhz), .hsync_vm(hsync), .vsync_vm(vsync), .red(vgaRed), .green(vgaGreen), .blue(vgaBlue));
 	 gameManager gm(.clk_gm(clk), .btns_gm(btns), .btnu_gm(btnu), .btnl_gm(btnl), .btnd_gm(btnd), .btnr_gm(btnr), .rst_gm(rst), .cursorPosition_gm(cursorPosition), .gameState_gm(gameState), .p1Grid_gm(p1Grid), .p2Grid_gm(p2Grid));
-		
+	seven_segment_display sd( .clk_d(clk_500hz) , .numGamesPlayedState_d(sw[1]) ,  .numGamesPlayed_d() , .gameState_d(gameState) , .an_d(an) , .seg_d(seg) )	
 endmodule
