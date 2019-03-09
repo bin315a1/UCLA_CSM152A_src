@@ -26,7 +26,7 @@ module gameManager(
 	input btnd_gm,
 	input btnr_gm,
 	input rst_gm,
-
+	output wire[3:0] gameIncrement_gm,
 	output reg [3:0] cursorPosition_gm,
 	output wire [2:0] gameState_gm,
 	output reg [8:0] p1Grid_gm,
@@ -151,6 +151,6 @@ module gameManager(
 		
 	end
 	
-	gameStatus gs(.clk_gs(clk_gm), .btns_gs(btns_gm), .p1Grid_gs(p1Grid_gm), .p2Grid_gs(p2Grid_gm), .gameState_gs(gameState_gm));
+	gameStatus gs(.clk_gs(clk_gm), .btns_gs(btns_gm), .p1Grid_gs(p1Grid_gm), .p2Grid_gs(p2Grid_gm), .gameState_gs(gameState_gm), .gameIncrement_gs(gameIncrement_gm));
 	
 endmodule
