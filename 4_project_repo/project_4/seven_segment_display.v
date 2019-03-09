@@ -6,12 +6,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 module display(
 //=============inputs===========
-	input clk,
-	input numGamesPlayedState, // from switch, either 1'b1 or 1'b0, if 1'b1 then display should show the number of games played
-	input numGamesPlayed, // how many games have been played so far
-	input  [2:0] gameState,
-	output [3:0] an;
-	output [7:0] seg;
+	input clk_d,
+	input numGamesPlayedState_d, // from switch, either 1'b1 or 1'b0, if 1'b1 then display should show the number of games played
+	input numGamesPlayed_d, // how many games have been played so far
+	input  [2:0] gameState_d,
+	output [3:0] an_d;
+	output [7:0] seg_d;
     );
 	
 	 //state of game
@@ -30,7 +30,7 @@ module display(
 
 
 	//iterate through anodes, 1 - 4, when 5 goes back to 1
-	always @(posedge clk) begin
+	always @(posedge clk_d) begin
 		if(iterator == 3'b101) begin
 			iterator = 3'b001;
 		end
@@ -43,7 +43,7 @@ module display(
 		endcase
 
 		//the game state is 2 -> game is over show: D R A W
-		if(gameState==3'b010)begin
+		if(gameState_d==3'b010)begin
 			case(iterator)
 				3'b001: seg_reg = 8'b11010101;  // W : for the first anode
 				3'b010: seg_reg = 8'b10001000;  // A : for the second anode
@@ -54,7 +54,7 @@ module display(
 		end
 
 		//the game state is 3 -> P1 has won: P 2 L 
-		if(gameState==3'b011)begin
+		if(gameState_d==3'b011)begin
 			case(iterator)
 				3'b001: seg_reg = 8'b11111111;  // blank
 				3'b010: seg_reg = 8'b11110001;	// L
@@ -65,7 +65,7 @@ module display(
 		end
 
 		//the game state is 4 -> P1 has won: P 1 L
-		if(gameState==3'b100)begin
+		if(gameState_d==3'b100)begin
 			case(iterator)
 				3'b001: seg_reg = 8'b11111111;  // blank
 				3'b010: seg_reg = 8'b11110001;	// L
@@ -77,9 +77,9 @@ module display(
 
 		
 		//if the desired switch got turned on to show how many games have been played so far
-		if(numGamesPlayedState==1'b1)begin
+		if(numGamesPlayedState_d==1'b1)begin
 			// loop through the 
-			while(numGamesPlayed >0 )begin
+			while(numGamesPlayed_d >0 )begin
 				//pick the desired anode based on the iterator
 				case(iterator)
 					3'b001: an_reg = 4'b1110;	// anode 1
@@ -89,12 +89,12 @@ module display(
 				endcase
 				//assign the digit to the corresponding iterator
 				case(iterator)
-					3'b001: value = numGamesPlayed%10;
-					3'b010: value = numGamesPlayed%10;
-					3'b011: value = numGamesPlayed%10;
-					3'b100: value = numGamesPlayed%10;	//value equals to the numbers from according digits
+					3'b001: value = numGamesPlayed_d%10;
+					3'b010: value = numGamesPlayed_d%10;
+					3'b011: value = numGamesPlayed_d%10;
+					3'b100: value = numGamesPlayed_d%10;	//value equals to the numbers from according digits
 				endcase
-				numGamesPlayed= numGamesPlayed/10;
+		
 				case(value)
 					4'b0000 : seg_reg = 8'b11000000;	//seg is assigned accordingly
 					4'b0001 : seg_reg = 8'b11111001;
@@ -110,10 +110,11 @@ module display(
 					//default to 0
 					default : seg_reg = 8'b11000000;
 				endcase
+				numGamesPlayed_d= numGamesPlayed_d/10;
 				iterator = iterator + 1;
 			end
 	end
-	assign seg = seg_reg;
-	assign an = an_reg;
+	assign seg_d = seg_reg;
+	assign an_d = an_reg;
 
 endmodule
